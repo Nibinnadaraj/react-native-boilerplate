@@ -1,10 +1,10 @@
-import axios from "axios";
+import axios from 'axios';
 
 export const apiCaller = async (
   url: string,
   method: string,
   params?: object,
-  headerParams?: object
+  headerParams?: object,
 ) => {
   interface optionTypes {
     method?: string;

@@ -1,32 +1,28 @@
 import React from 'react';
-import type {PropsWithChildren} from 'react';
-import {
-  SafeAreaView,
-  StatusBar,
-} from 'react-native';
-import { store } from './components/redux/store/store';
-import { Provider } from 'react-redux';
-import { styles } from './components/ui/styles/mainStyle';
-import { useDarkMode } from './components/utils/hooks/useDarkMode';
-import { appColors } from './components/ui/colors/appColors';
+import {SafeAreaView, StatusBar} from 'react-native';
+import {store} from './components/redux/store/store';
+import {Provider} from 'react-redux';
+import {mainStylesDark, mainStylesLight} from './components/ui/styles/main/mainStyle';
+import {useDarkMode} from './components/utils/hooks/darkMode/useDarkMode';
+import {appColors} from './components/ui/colors/appColors';
+import RootNavigation from './components/navigation/rootNavigation';
 
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
+
 function App(): JSX.Element {
   const isDarkMode = useDarkMode();
   return (
     <Provider store={store}>
-    <SafeAreaView style={styles.background}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={isDarkMode ? appColors.dark.background : appColors.light.background}
-      />
-    </SafeAreaView>
+      <SafeAreaView style={isDarkMode ? mainStylesDark.background : mainStylesLight.background}>
+        <StatusBar
+          barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+          backgroundColor={
+            isDarkMode ? appColors.dark.background : appColors.light.background
+          }
+        />
+        <RootNavigation/>
+      </SafeAreaView>
     </Provider>
   );
 }
-
-
 
 export default App;
