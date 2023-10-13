@@ -3,12 +3,12 @@ import { View, Text } from 'react-native'
 
 const Login = () => {
   return (
-    <View>
-        <Text>
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>
         Login
-        </Text>
-        </View>
+      </Text>
+    </View>
   )
 }
 
-export default Login
+export default Login;

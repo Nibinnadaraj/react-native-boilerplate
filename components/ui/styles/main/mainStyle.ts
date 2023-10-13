@@ -11,13 +11,15 @@ import { appColors } from '../../colors/appColors';
 
 export const mainStylesDark = StyleSheet.create({
   background: {
-    backgroundColor: appColors.dark.background
+    backgroundColor: appColors.dark.background,
+    flex:1
   },
 });
 
 export const mainStylesLight = StyleSheet.create({
   background: {
-    backgroundColor: appColors.light.background
+    backgroundColor: appColors.light.background,
+    flex:1
   },
 });
 
